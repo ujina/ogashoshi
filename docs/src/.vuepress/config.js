@@ -33,7 +33,6 @@ module.exports = {
     editLinkText: '',
     lastUpdated: false,
     nav: [
-      
       {
         text: '業務案内',
         link: '/guide/',
@@ -41,6 +40,10 @@ module.exports = {
       {
         text: '報酬表',
         link: '/fee/'
+      },
+      {
+        text: 'BLOG',
+        link: 'https://ogashoshi-blog.netlify.app/',
       },
     ],
 
