@@ -1,0 +1,19 @@
+{
+  "name": "ogashoshi",
+  "version": "0.0.1",
+  "description": "ogashoshi site",
+  "main": "index.js",
+  "authors": {
+    "name": "ogashoshi",
+    "email": "ogashoshi@gmail.com"
+  },
+  "repository": "/ogashoshi",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
