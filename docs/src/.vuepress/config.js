@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         text: 'BLOG',
-        link: 'https://ogashoshi-blog.netlify.app/',
+        link: 'https://blog.ogashoshi.com/',
       },
     ],
 
