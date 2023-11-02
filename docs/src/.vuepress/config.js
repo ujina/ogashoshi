@@ -1,6 +1,12 @@
 const { description } = require('../../package')
 
 module.exports = {
+  locales: {
+    '/': {
+      lang: 'ja',
+    }
+  },
+  
   /**
    * 　日本語設定
    */
@@ -35,7 +41,7 @@ module.exports = {
     editLinks: false,
     docsDir: '',
     editLinkText: '',
-    lastUpdated: true,
+    lastUpdated: '最終更新日',
     nav: [
       {
         text: 'BLOG',
