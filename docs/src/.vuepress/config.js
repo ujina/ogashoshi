@@ -2,6 +2,10 @@ const { description } = require('../../package')
 
 module.exports = {
   /**
+   * 　日本語設定
+   */
+  lang: 'ja',
+  /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
   title: 'OGASHOSHI',
