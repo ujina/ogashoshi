@@ -78,6 +78,8 @@ module.exports = {
         children: [
           //'',
           'haka-jimai.md',
+          '20220727.md',
+          '20220823',
         ]
         }
       ],
