@@ -31,8 +31,13 @@ module.exports = {
     editLinks: false,
     docsDir: '',
     editLinkText: '',
-    lastUpdated: false,
+    lastUpdated: true,
     nav: [
+      {
+        text: 'BLOG',
+        link: '/blog/',
+      },
+
       {
         text: '業務案内',
         link: '/guide/',
@@ -41,10 +46,7 @@ module.exports = {
         text: '報酬表',
         link: '/fee/'
       },
-      {
-        text: 'BLOG',
-        link: 'https://blog.ogashoshi.com/',
-      },
+      
     ],
 
     sidebar: {
@@ -55,7 +57,6 @@ module.exports = {
           children: [
             '',
             'zizen-kakunin.md',
-            'haka-jimai.md',
           ]
         }
       ],
@@ -69,6 +70,18 @@ module.exports = {
         ]
         }
       ],
+
+      '/blog/': [
+        {
+          title: 'Blog',
+          collapsable: false,
+        children: [
+          //'',
+          'haka-jimai.md',
+        ]
+        }
+      ],
+
     }
   },
 

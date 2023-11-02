@@ -133,7 +133,13 @@ export const isReservedAttribute = makeMap('key,ref,slot,slot-scope,is')
  * Remove an item from an array.
  */
 export function remove(arr: Array<any>, item: any): Array<any> | void {
-  if (arr.length) {
+  const len = arr.length
+  if (len) {
+    // fast path for the only / last item
+    if (item === arr[len - 1]) {
+      arr.length = len - 1
+      return
+    }
     const index = arr.indexOf(item)
     if (index > -1) {
       return arr.splice(index, 1)
@@ -280,9 +286,7 @@ export function genStaticKeys(
   modules: Array<{ staticKeys?: string[] } /* ModuleOptions */>
 ): string {
   return modules
-    .reduce((keys, m) => {
-      return keys.concat(m.staticKeys || [])
-    }, [] as string[])
+    .reduce<string[]>((keys, m) => keys.concat(m.staticKeys || []), [])
     .join(',')
 }
 
