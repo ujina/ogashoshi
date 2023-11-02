@@ -76,16 +76,11 @@ module.exports = {
           title: 'Blog',
           collapsable: false,
         children: [
-          '',
-          'haka-jimai.md',
-          '20220727.md',
-          '20220823.md',
-          '20220728.md',
-          '20229729.md',
+        //'',
+          'haka-jimai',
         ]
         }
-      ],
-
+      ]
     }
   },
 

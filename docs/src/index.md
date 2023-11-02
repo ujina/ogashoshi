@@ -2,8 +2,8 @@
 home: true
 heroImage: /ogashoshi_logo.jpeg  
 tagline: おがさわら行政書士事務所
-actionText: 事業復活支援金の事前確認について →
-actionLink: /guide/zizen-kakunin.html
+actionText: 事務所案内はこちら →
+actionLink: /guide/
 features:
 - title: 事業復活支援金の事前確認について
   details: 面談・オンラインともに一律5000円（税込）にて承っております。
