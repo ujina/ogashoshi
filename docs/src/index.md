@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /ogashoshi_logo.jpeg  
-tagline: おがさわら行政書士事務所
+tagline: OGASHOSHI
 actionText: 事務所案内はこちら →
 actionLink: /guide/
 features:

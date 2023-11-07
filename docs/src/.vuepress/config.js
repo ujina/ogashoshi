@@ -14,7 +14,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'OGASHOSHI',
+  title: 'おがさわら行政書士事務所',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -83,10 +83,10 @@ module.exports = {
 
       '/blog/': [
         {
-          title: 'Blog',
+          title: '',
           collapsable: false,
         children: [
-        //'',
+          '',
           'haka-jimai',
         ]
         }
