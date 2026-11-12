@@ -51,6 +51,7 @@ export default defineConfig({
           text: 'BLOG',
           items: [
             { text: '記事一覧', link: '/blog/' },
+            { text: 'サイトをVitePressでリニューアルしました', link: '/blog/20261112' },
             { text: '墓じまいの費用例', link: '/blog/haka-jimai' },
           ],
         },
