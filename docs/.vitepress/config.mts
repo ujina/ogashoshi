@@ -6,10 +6,6 @@ export default defineConfig({
   title: 'おがさわら行政書士事務所',
   description: '広島市南区の行政書士事務所です。許認可申請、相続・遺言、法人設立などの行政手続と書類作成を取り扱っています。',
 
-  head: [
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-  ],
-
   // 最終更新日の表示（Git の履歴から取得）
   lastUpdated: true,
 
