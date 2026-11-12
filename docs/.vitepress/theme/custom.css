@@ -12,8 +12,19 @@
   --vp-c-brand-3: #2f9468;
 }
 
-/* トップページのロゴを丸く表示する */
+/* トップページのロゴを丸く表示する（縦横を同じ大きさに固定して切り抜く） */
 .VPHero .image-src {
-  max-width: 200px;
+  width: 200px;
+  height: 200px;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
   border-radius: 50%;
+}
+
+@media (max-width: 639px) {
+  .VPHero .image-src {
+    width: 150px;
+    height: 150px;
+  }
 }
