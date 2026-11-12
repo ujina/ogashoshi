@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: おがさわら<br>行政書士事務所
-  tagline: OGASHOSHI
+  tagline: OGASHOSHI.COM
   image:
     src: /ogashoshi_logo.jpeg
     alt: おがさわら行政書士事務所
