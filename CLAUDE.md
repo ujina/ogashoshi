@@ -15,7 +15,8 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 
 ## 公開
 - Netlify で公開している。ビルド設定はリポジトリ直下の `netlify.toml`。
-- GitHub は旧サイトと同じ ujina/ogashoshi。VitePress 版は `vitepress` ブランチに置き、公開を切り替えるまで本番（master）は旧 VuePress 版のまま。
+- 公開先は https://ogashoshi.com 。GitHub は旧サイトと同じ ujina/ogashoshi で、Netlify の本番ブランチは `vitepress`（2026-11-12 に VuePress 版から切り替え）。`vitepress` に push すると自動で公開される。
+- 旧 VuePress 版は `master` ブランチに残している。
 
 ## コマンド
 - `npm install` … 初回のみ
