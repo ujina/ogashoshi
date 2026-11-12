@@ -1,27 +1,31 @@
 // docs/blog/posts.data.ts
-// blog フォルダの記事を集めて、ブログ一覧用のデータを作る
 import { createContentLoader } from 'vitepress'
 
 export interface Post {
   title: string
   url: string
-  description: string
-  postId: number
+  date: string | null
 }
 
+// 1. data という名前で明示的に型を宣言して export する（ビルドエラー対策）
 export declare const data: Post[]
 
+// 2. デフォルトエクスポートでコンテンツを収集・成形する
 export default createContentLoader('blog/*.md', {
+  includeSrc: false,
+  render: false,
   transform(raw): Post[] {
     return raw
-      .filter(({ url, frontmatter }) => url !== '/blog/' && !frontmatter.draft)
+      .filter(({ frontmatter }) => !frontmatter.draft)
       .map(({ url, frontmatter }) => ({
         title: frontmatter.title || '無題の記事',
         url,
-        description: frontmatter.description || '',
-        postId: Number(frontmatter.postId) || 0,
+        date: frontmatter.date ? String(frontmatter.date) : null
       }))
-      // postId（例: 20231102）の新しい順に並べる
-      .sort((a, b) => b.postId - a.postId)
-  },
+      .sort((a, b) => {
+        const dateA = a.date ? new Date(a.date).getTime() : 0
+        const dateB = b.date ? new Date(b.date).getTime() : 0
+        return dateB - dateA
+      })
+  }
 })

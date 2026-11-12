@@ -9,6 +9,16 @@ export default defineConfig({
   // 最終更新日の表示（Git の履歴から取得）
   lastUpdated: true,
 
+  // ブログ記事に共通の設定（記事ごとの frontmatter に書いた値が優先される）
+  transformPageData(pageData) {
+    if (pageData.relativePath.startsWith('blog/')) {
+      pageData.frontmatter = {
+        next: false,
+        ...pageData.frontmatter,
+      }
+    }
+  },
+
   markdown: {
     container: {
       tipLabel: 'ヒント',
@@ -43,16 +53,6 @@ export default defineConfig({
           text: '報酬表',
           items: [
             { text: '報酬・費用について', link: '/fee/' },
-          ],
-        },
-      ],
-      '/blog/': [
-        {
-          text: 'BLOG',
-          items: [
-            { text: '記事一覧', link: '/blog/' },
-            { text: 'サイトをVitePressでリニューアルしました', link: '/blog/20261112' },
-            { text: '墓じまいの費用例', link: '/blog/haka-jimai' },
           ],
         },
       ],
