@@ -13,6 +13,10 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 - 2台の Mac（Mac mini、MacBook Air）で作業する。受け渡しは GitHub（push / pull）で行い、Dropbox や iCloud などの同期フォルダには置かない。
 - `node_modules` とビルド結果は Git に入れない（`.gitignore` 済み）。
 
+## 公開
+- Netlify で公開している。ビルド設定はリポジトリ直下の `netlify.toml`。
+- GitHub は旧サイトと同じ ujina/ogashoshi。VitePress 版は `vitepress` ブランチに置き、公開を切り替えるまで本番（master）は旧 VuePress 版のまま。
+
 ## コマンド
 - `npm install` … 初回のみ
 - `npm run docs:dev` … 開発サーバー（http://localhost:5173）
