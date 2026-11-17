@@ -2,6 +2,7 @@
 title: Blog一覧
 draft: true
 prev: false
+next: false
 ---
 
 # Blog一覧
@@ -9,8 +10,8 @@ prev: false
 日々の業務からのメモです。
 
 <script setup>
-// 同じフォルダにある posts.data からデータだけをインポート
-import { data as posts } from './posts.data'
+// blog フォルダにある posts.data からデータだけをインポート
+import { data as posts } from './blog/posts.data'
 
 // 日付フォーマット関数
 const formatDate = (dateString) => {

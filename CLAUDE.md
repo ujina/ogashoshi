@@ -8,6 +8,13 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 - ブログ記事は `docs/blog/*.md`。ファイル名は日付形式（例: `20261112.md`、同じ日に2本目なら `20261112-2.md`）。
 - 記事の frontmatter に `title` と `date`（例: `2026-11-12 13:17`、時刻は半角スペース区切り）を書くと、一覧（`docs/blog/posts.data.ts`）に日付の新しい順で並ぶ。`draft: true` の記事は一覧に出ない。
 - 一覧ページと記事ページの作りは練習用サイト（vitepress-macmini）に合わせている。記事ごとのサイドバー登録は不要。
+- ブログ一覧ページは `docs/blog-index.md`。`config.mts` の `rewrites` で `/blog/` として公開している。`docs/blog/` には記事（と `posts.data.ts`）だけを置く。
+
+## ブログ管理画面（Sveltia CMS）
+- https://ogashoshi.com/admin/ からブラウザで記事を書ける。GitHub アカウントでログイン（Netlify の OAuth 経由）。
+- 設定は `docs/public/admin/config.yml`。保存すると `vitepress` ブランチに直接コミットされ、Netlify が公開する。
+- 管理画面で入れた画像は `docs/public/images/` に保存され、`/images/ファイル名` で参照される。
+- ブラウザで記事を書いた後に Mac で作業するときは、必ず最初に `git pull` する。
 
 ## 作業の約束
 - 旧サイトと同じ URL を保つ（`/guide/zizen-kakunin.html` など）。`cleanUrls` は使わない。

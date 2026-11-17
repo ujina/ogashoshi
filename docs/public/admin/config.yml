@@ -1,0 +1,51 @@
+# Sveltia CMS の設定（https://ogashoshi.com/admin/）
+
+backend:
+  name: github
+  repo: ujina/ogashoshi
+  branch: vitepress
+  # 公開リポジトリなので、書き込みの許可は公開リポジトリだけに絞る
+  auth_scope: public_repo
+  commit_messages:
+    create: 'ブログ記事「{{slug}}」を追加'
+    update: 'ブログ記事「{{slug}}」を更新'
+    delete: 'ブログ記事「{{slug}}」を削除'
+    uploadMedia: '画像「{{path}}」を追加'
+    deleteMedia: '画像「{{path}}」を削除'
+
+# 管理画面から入れた画像の保存先と、記事の中での書き方
+media_folder: docs/public/images
+public_folder: /images
+
+collections:
+  - name: blog
+    label: ブログ
+    label_singular: ブログ記事
+    folder: docs/blog
+    extension: md
+    format: frontmatter
+    create: true
+    # ファイル名（＝URL）は日付形式。例: 20261117.md → /blog/20261117.html
+    slug: '{{year}}{{month}}{{day}}'
+    summary: '{{date}}　{{title}}'
+    sortable_fields: [date, title]
+    fields:
+      - label: タイトル
+        name: title
+        widget: string
+      - label: 日付
+        name: date
+        widget: datetime
+        # 手で書いた記事と同じ形（例: 2026-11-17 18:55）で保存する
+        format: 'YYYY-MM-DD HH:mm'
+        picker_utc: false
+      - label: 下書き（オンにするとブログ一覧に出ません）
+        name: draft
+        widget: boolean
+        default: false
+        required: false
+      - label: 本文
+        name: body
+        widget: markdown
+        # Markdown をそのまま書くモードを先にする（VitePress 独自の書き方を崩さないため）
+        modes: [raw, rich_text]

@@ -9,6 +9,12 @@ export default defineConfig({
   // 最終更新日の表示（Git の履歴から取得）
   lastUpdated: true,
 
+  // ブログ一覧のファイルは docs/blog の外に置き、URL は /blog/ のまま公開する
+  // （docs/blog には記事だけを置き、CMS の記事一覧に一覧ページが混ざらないようにするため）
+  rewrites: {
+    'blog-index.md': 'blog/index.md',
+  },
+
   // ブログ記事に共通の設定（記事ごとの frontmatter に書いた値が優先される）
   transformPageData(pageData) {
     if (pageData.relativePath.startsWith('blog/')) {
