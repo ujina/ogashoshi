@@ -8,6 +8,7 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 - ブログ記事は `docs/blog/*.md`。ファイル名は日付形式（例: `20261112.md`、同じ日に2本目なら `20261112-2.md`）。
 - 記事の frontmatter に `title` と `date`（例: `2026-11-12 13:17`、時刻は半角スペース区切り）を書くと、一覧（`docs/blog/posts.data.ts`）に日付の新しい順で並ぶ。`draft: true` の記事は一覧に出ない。
 - 一覧ページと記事ページの作りは練習用サイト（vitepress-macmini）に合わせている。記事ごとのサイドバー登録は不要。
+- 記事ページの上には frontmatter の `title` と `date` が自動で表示される（`docs/.vitepress/theme/BlogTitle.vue`）。本文に `# タイトル` は書かない。
 - ブログ一覧ページは `docs/blog-index.md`。`config.mts` の `rewrites` で `/blog/` として公開している。`docs/blog/` には記事（と `posts.data.ts`）だけを置く。
 
 ## ブログ管理画面（Sveltia CMS）
