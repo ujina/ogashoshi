@@ -3,6 +3,7 @@ title: Blog一覧
 draft: true
 prev: false
 next: false
+aside: false # 右側の目次欄をなくして、一覧を中央に置く
 ---
 
 # Blog一覧
