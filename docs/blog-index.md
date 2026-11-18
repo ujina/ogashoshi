@@ -39,7 +39,8 @@ const formatDate = (dateString) => {
 .post-list { margin-top: 1.5rem; }
 .post-item { margin-bottom: 1rem; }
 time { font-size: 1.2rem; color: var(--vp-c-text-2); margin-right: 10px; }
-h3 { display: inline-block; margin: 0; font-size: 1.2rem; }
+/* タイトルが長いときは、日付の横から続けて折り返す（inline-block だと丸ごと次の行に落ちる） */
+h3 { display: inline; margin: 0; font-size: 1.2rem; line-height: 1.6; }
 a { color: var(--vp-c-brand-1); text-decoration: none; }
 a:hover { text-decoration: underline; }
 </style>
