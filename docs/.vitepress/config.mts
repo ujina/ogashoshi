@@ -18,8 +18,17 @@ export default defineConfig({
   // ブログ記事に共通の設定（記事ごとの frontmatter に書いた値が優先される）
   transformPageData(pageData) {
     if (pageData.relativePath.startsWith('blog/')) {
+      // 一覧ページ以外（＝記事）には、note 風の見た目用の設定を付ける
+      const isPost = !pageData.relativePath.endsWith('index.md')
       pageData.frontmatter = {
         next: false,
+        ...(isPost
+          ? {
+              prev: false,
+              aside: false, // 右側の目次を出さない
+              pageClass: 'blog-post', // blog-note.css の見た目を当てる目印
+            }
+          : {}),
         ...pageData.frontmatter,
       }
     }
