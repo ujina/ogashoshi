@@ -5,7 +5,7 @@
  */
 
 .blog-post {
-  --note-text: #08131a;
+  --note-text: var(--vp-c-text-1);
   --note-quote-bg: #f5f8fa;
   --note-font: 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
     Arial, 'Noto Sans JP', Meiryo, sans-serif;
