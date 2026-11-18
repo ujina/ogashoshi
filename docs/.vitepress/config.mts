@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { collectLinkCards } from './linkcard'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -16,7 +17,11 @@ export default defineConfig({
   },
 
   // ブログ記事に共通の設定（記事ごとの frontmatter に書いた値が優先される）
-  transformPageData(pageData) {
+  async transformPageData(pageData, { siteConfig }) {
+    // 記事の中の <LinkCard url="..."> の相手ページから、サムネイル・タイトル・説明を取ってくる（linkcard.ts）
+    const linkCards = await collectLinkCards(siteConfig.srcDir, pageData.filePath)
+    if (linkCards) pageData.frontmatter.linkCards = linkCards
+
     if (pageData.relativePath.startsWith('blog/')) {
       // 一覧ページ以外（＝記事）には、note 風の見た目用の設定を付ける
       const isPost = !pageData.relativePath.endsWith('index.md')

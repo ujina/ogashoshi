@@ -18,6 +18,10 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 - 管理画面で入れた画像は `docs/public/images/` に保存され、`/images/ファイル名` で参照される。
 - ブラウザで記事を書いた後に Mac で作業するときは、必ず最初に `git pull` する。
 
+## 記事の中で使える部品（docs/.vitepress/theme/components/）
+- `<LinkCard url="https://..." />` … 相手のページのサムネイル画像・タイトル・説明の付いたカード。中身はビルド時に `docs/.vitepress/linkcard.ts` が取ってくる（取れないときは URL だけのカード）。
+- 管理画面では本文を Markdown のモードで書けば、そのまま使える（管理画面のプレビューには表示されない）。
+
 ## 作業の約束
 - 旧サイトと同じ URL を保つ（`/guide/zizen-kakunin.html` など）。`cleanUrls` は使わない。
 - 2台の Mac（Mac mini、MacBook Air）で作業する。受け渡しは GitHub（push / pull）で行い、Dropbox や iCloud などの同期フォルダには置かない。
