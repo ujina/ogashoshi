@@ -25,6 +25,9 @@ collections:
     extension: md
     format: frontmatter
     create: true
+    # 右側のプレビューは最初は閉じて、入力欄を画面いっぱいに使う
+    editor:
+      preview: false
     # ファイル名（＝URL）は日付形式。例: 20261117.md → /blog/20261117.html
     slug: '{{year}}{{month}}{{day}}'
     summary: '{{date}}　{{title}}'
@@ -33,6 +36,11 @@ collections:
       - label: タイトル
         name: title
         widget: string
+      - label: 本文
+        name: body
+        widget: markdown
+        # Markdown をそのまま書くモードを先にする（VitePress 独自の書き方を崩さないため）
+        modes: [raw, rich_text]
       - label: 日付
         name: date
         widget: datetime
@@ -44,8 +52,3 @@ collections:
         widget: boolean
         default: false
         required: false
-      - label: 本文
-        name: body
-        widget: markdown
-        # Markdown をそのまま書くモードを先にする（VitePress 独自の書き方を崩さないため）
-        modes: [raw, rich_text]
