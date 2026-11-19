@@ -9,15 +9,16 @@ hero:
     alt: おがさわら行政書士事務所
   actions:
     - theme: brand
-      text: 事務所案内
-      link: /guide/
-    - theme: brand
       text: ブログ
       link: /blog/
+    - theme: brand
+      text: 事務所案内
+      link: /guide/
+    
 
 features:
   - title: 専門分野は？
-    details: 相続遺言のご依頼が多いですが許認可も承ります。
+    details: 相続遺言のご依頼が多いです。許認可その他も承ります。
   - title: お気軽にご相談ください
     details: 私がお伝えするまで無料です。
   - title: 他士業や専門業者を紹介します
