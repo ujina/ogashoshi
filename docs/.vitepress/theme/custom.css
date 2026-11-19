@@ -14,3 +14,8 @@
     height: 150px;
   }
 }
+
+/* トップページのタイトル下のボタン（hero の actions）の文字を 16px にする（標準は 14px） */
+.VPHero .actions .action .VPButton {
+  font-size: 16px;
+}
