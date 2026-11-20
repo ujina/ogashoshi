@@ -22,7 +22,9 @@ export function netlifyImages(md: MarkdownIt) {
     if (!src.startsWith('/') || src.startsWith('//') || src.startsWith('/.netlify/')) return html
     const path = src.split(/[?#]/)[0]
     if (!TARGET.test(path)) return html
-    const cdn = `/.netlify/images?url=${encodeURIComponent(path)}&w=${WIDTH}`
-    return html.replace(`src="${md.utils.escapeHtml(src)}"`, `src="${md.utils.escapeHtml(cdn)}"`)
+    const cdn = `/.netlify/images?url=${encodeURIComponent(path).replace(/'/g, '%27')}&w=${WIDTH}`
+    // ふつうの src="/..." にすると、Vite がサイト内のファイルだと思って読み込もうとし、ビルドに失敗する。
+    // :src="'...'"（Vue の式として渡す文字列）にすると、そのままの URL として出力される
+    return html.replace(`src="${md.utils.escapeHtml(src)}"`, `:src="'${md.utils.escapeHtml(cdn)}'"`)
   }
 }
