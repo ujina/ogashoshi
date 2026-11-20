@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { collectLinkCards } from './linkcard'
+import { netlifyImages } from './netlify-image'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -40,6 +41,14 @@ export default defineConfig({
   },
 
   markdown: {
+    // 記事の画像を、Netlify でビルドしたときだけ Netlify Image CDN で縮めて配る（netlify-image.ts）
+    config(md) {
+      netlifyImages(md)
+    },
+    // 記事の画像は、画面に近づいてから読み込む
+    image: {
+      lazyLoad: true,
+    },
     container: {
       tipLabel: 'ヒント',
       warningLabel: '注意',

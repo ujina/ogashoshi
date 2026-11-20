@@ -16,6 +16,7 @@ VuePress 1 で作っていた旧サイト（GitHub: ujina/ogashoshi）を VitePr
 - https://ogashoshi.com/admin/ からブラウザで記事を書ける。GitHub アカウントでログイン（Netlify の OAuth 経由）。
 - 設定は `docs/public/admin/config.yml`。保存すると `vitepress` ブランチに直接コミットされ、Netlify が公開する。
 - 管理画面で入れた画像は `docs/public/images/` に保存され、`/images/ファイル名` で参照される。
+- 記事の画像（`/images/…` など、サイト内の jpg・png・webp）は、Netlify でビルドしたときだけ `docs/.vitepress/netlify-image.ts` が Netlify Image CDN（`/.netlify/images?url=…&w=1240`）経由に書き換え、縮めて軽い形式で配る。開発サーバーでは元の画像のまま。iPhone の写真をそのままアップロードしてよい。
 - ブラウザで記事を書いた後に Mac で作業するときは、必ず最初に `git pull` する。
 
 ## 記事の中で使える部品（docs/.vitepress/theme/components/）
